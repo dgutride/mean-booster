@@ -54,6 +54,17 @@ app.get('/contacts/:id', (req, res) => {
     });
 });
 
+app.put('/contacts/:id', (req, res) => {
+  Contact.findOneAndUpdate(
+    {_id: req.params.id},
+    {$set: {name: req.body.name, email: req.body.email, number: req.body.number}}
+  ).then(() => {
+    res.json(res.body);
+  }).catch(e => {
+    console.error(`Error updating Contact with ID ${req.params.id}.`);
+  });
+});
+
 function initDB () {
   Contact.find().exec()
     .then((result) => {
