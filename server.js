@@ -44,6 +44,16 @@ app.delete('/contacts/:id', (req, res) => {
     });
 });
 
+app.get('/contacts/:id', (req, res) => {
+  Contact.findById({_id: req.params.id})
+    .then((contact) => {
+      res.json(contact);
+    })
+    .catch(e => {
+      console.error(`Error trying to find a contact with ID ${req.params.id}.`);
+    });
+});
+
 function initDB () {
   Contact.find().exec()
     .then((result) => {

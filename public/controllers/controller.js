@@ -23,4 +23,11 @@ meanBooster.controller('AppCtrl', ($scope, $http) => {
       refresh();
     });
   };
+
+  $scope.edit = (id) => {
+    $http.get(`/contacts/${id}`).then((response) => {
+      console.log(response.data);
+      $scope.contact = response.data;
+    });
+  };
 });
