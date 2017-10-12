@@ -27,11 +27,20 @@ app.post('/contacts', (req, res) => {
   contact.number = req.body.number;
   contact.save()
     .then(() => {
-      console.log('Data saved.');
-      res.json(contact);
+      res.json(res.body);
     })
     .catch(e => {
       console.error(e);
+    });
+});
+
+app.delete('/contacts/:id', (req, res) => {
+  Contact.findOneAndRemove({_id: req.params.id})
+    .then(() => {
+      res.json(res.body);
+    })
+    .catch(e => {
+      console.error(`Error removing contact with ID ${req.params.id}.`);
     });
 });
 

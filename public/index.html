@@ -26,12 +26,13 @@
             <td><input type="text" class="form-control" ng-model="contact.name"></td>
             <td><input type="text" class="form-control" ng-model="contact.email"></td>
             <td><input type="text" class="form-control" ng-model="contact.number"></td>
-            <td><button type="button" class="btn btn-default" ng-click="add()">Add</button></td>
+            <td><button type="button" class="btn btn-default" ng-click="add()">Add contact</button></td>
           </tr>
           <tr ng-repeat="contact in contacts">
             <td>{{contact.name}}</td>
             <td>{{contact.email}}</td>
             <td>{{contact.number}}</td>
+            <td><button type="button" class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
           </tr>
         </tbody>
     </div>

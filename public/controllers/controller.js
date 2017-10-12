@@ -13,7 +13,13 @@ meanBooster.controller('AppCtrl', ($scope, $http) => {
   refresh();
 
   $scope.add = () => {
-    $http.post('/contacts', $scope.contact).then((response) => {
+    $http.post('/contacts', $scope.contact).then(() => {
+      refresh();
+    });
+  };
+
+  $scope.remove = (id) => {
+    $http.delete(`/contacts/${id}`).then(() => {
       refresh();
     });
   };
