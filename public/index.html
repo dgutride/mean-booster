@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html ng-app="meanBooster">
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/patternfly@3.27.7/dist/css/patternfly.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/patternfly@3.27.7/dist/css/patternfly-additions.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-patternfly@4.11.2/dist/styles/angular-patternfly.min.css">
+  <title>MEAN Booster</title>
+
+  <body>
+
+    <div class="container" ng-controller="AppCtrl">
+      <h1>Contacts</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" class="form-control" ng-model="contact.name"></td>
+            <td><input type="text" class="form-control" ng-model="contact.email"></td>
+            <td><input type="text" class="form-control" ng-model="contact.number"></td>
+            <td><button type="button" class="btn btn-default" ng-click="add()">Add</button></td>
+          </tr>
+          <tr ng-repeat="contact in contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.number}}</td>
+          </tr>
+        </tbody>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/patternfly@3.27.7/dist/js/patternfly.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular-patternfly@4.11.2/dist/angular-patternfly.min.js"></script>
+    
+    <script src="controllers/controller.js"></script>
+  </body>
+</head>
+
+</html>
