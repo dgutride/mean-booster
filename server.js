@@ -6,10 +6,10 @@ const bodyParser = require('body-parser');
 const express = require('express');
 
 const app = express();
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/app')));
 app.use(bodyParser.json());
 
-const Contact = require('./public/model/Contact.model');
+const Contact = require('./app/model/Contact.model');
 
 mongoose.Promise = global.Promise;
 const mongoURL = 'mongodb://localhost/contacts';
