@@ -6,7 +6,9 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 
+// Add a health check
 const probe = require('kube-probe');
+probe(app);
 
 app.use(express.static(path.join(__dirname, '/app')));
 app.use(bodyParser.json());
@@ -67,33 +69,7 @@ app.put('/contacts/:id', (req, res) => {
   });
 });
 
-// function initDB () {
-//   Contact.find().exec()
-//     .then((result) => {
-//       if (result.length === 0) {
-//         const contact = new Contact();
-//         contact.name = 'Joaquim';
-//         contact.email = 'joaquim@email.com';
-//         contact.number = '(111) 111-1111';
-//         contact.save()
-//           .then(() => {
-//             console.log('DB initialized.');
-//           })
-//           .catch(e => {
-//             console.error(e);
-//           });
-//       } else {
-//         console.log('DB already created.');
-//       }
-//     })
-//     .catch((e) => {
-//       console.error(e);
-//     });
-// }
-
 app.listen(process.env.PORT);
 
-// Add a health check
-probe(app);
 console.log('server running.');
 
