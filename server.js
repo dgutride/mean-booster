@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const Contact = require('./app/model/Contact.model');
 
 mongoose.Promise = global.Promise;
-const mongoURL = 'mongodb://localhost/contacts';
+const mongoURL = 'mongodb://default:default@contacts/contacts';
 mongoose.connect(mongoURL, { useMongoClient: true });
 
 app.get('/contacts', async (req, res) => {
@@ -89,6 +89,6 @@ function initDB () {
     });
 }
 
-initDB();
 // app.listen(3000);
-console.log('server running on port 3000: http://localhost:3000');
+console.log('server running.');
+
