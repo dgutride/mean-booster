@@ -6,8 +6,16 @@
   "license": "Apache-2.0",
   "scripts": {
     "test": "tape test/*.js | tap-spec",
-    "lint": "eslint test/*.js"
+    "lint": "eslint test/*.js",
+    "openshift": "nodeshift --osc.strictSSL=false",
+    "start": "PORT=8080 node server.js"
   },
+  "files": [
+    "package.json",
+    "README.md",
+    "server.js",
+    "app"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bucharest-gold/mean-booster.git"
@@ -25,7 +33,7 @@
     "eslint-plugin-promise": "~3.5.0",
     "eslint-plugin-react": "~7.4.0",
     "eslint-plugin-standard": "~3.0.1",
-    "nodeshift": "^0.8.0",
+    "nodeshift": "^0.8.1",
     "standard-version": "^4.2.0",
     "tap-spec": "~4.1.1",
     "tape": "~4.8.0"
