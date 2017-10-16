@@ -33,7 +33,7 @@
     "eslint-plugin-promise": "~3.5.0",
     "eslint-plugin-react": "~7.4.0",
     "eslint-plugin-standard": "~3.0.1",
-    "nodeshift": "^0.8.1",
+    "nodeshift": "^0.9.0",
     "standard-version": "^4.2.0",
     "tap-spec": "~4.1.1",
     "tape": "~4.8.0"
