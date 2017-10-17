@@ -1,5 +1,7 @@
 # mean-booster
 
+[![Build Status](https://travis-ci.org/bucharest-gold/mean-booster.svg?branch=master)](https://travis-ci.org/bucharest-gold/mean-booster)
+
 MEAN stack CRUD
 
 #### How to run
