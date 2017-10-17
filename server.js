@@ -17,7 +17,10 @@ const Contact = require('./app/model/Contact.model');
 
 mongoose.Promise = global.Promise;
 const mongoURL = 'mongodb://default:default@contacts/contacts';
-mongoose.connect(mongoURL, { useMongoClient: true });
+mongoose.connect(mongoURL, { useMongoClient: true })
+  .then(_ => console.log(`Connected to mongodb at ${mongoURL}`))
+  .catch(err => console.error(`Unable to connect to mongo db at ${mongoURL}
+  ${err}`));
 
 app.get('/contacts', async (req, res) => {
   const contacts = await Contact.find();
