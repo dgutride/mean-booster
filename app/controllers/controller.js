@@ -1,8 +1,8 @@
 'use strict';
 
+/* global angular */
 const meanBooster = angular.module('meanBooster', []);
 meanBooster.controller('AppCtrl', ($scope, $http) => {
-
   function refresh () {
     $http.get('/contacts').then((response) => {
       $scope.contacts = response.data;
