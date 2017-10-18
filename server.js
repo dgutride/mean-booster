@@ -7,8 +7,7 @@ const express = require('express');
 const app = express();
 
 // Add a health check
-const probe = require('kube-probe');
-probe(app);
+require('kube-probe')(app);
 
 app.use(express.static(path.join(__dirname, '/app')));
 app.use(bodyParser.json());
