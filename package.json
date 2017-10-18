@@ -7,7 +7,7 @@
   "scripts": {
     "ci": "npm run lint && npm test",
     "test": "npm run test:unit && npm run test:integration",
-    "test:unit": "tape test/*.js | tap-spec",
+    "test:unit": "tape test/unit/*.js | tap-spec",
     "test:preIntegration": "echo # setup mongodb",
     "test:integration": "npm run test:preIntegration && echo 'test-integration'",
     "lint": "eslint server.js app test",
