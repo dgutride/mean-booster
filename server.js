@@ -1,6 +1,5 @@
 'use strict';
 
-const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -9,7 +8,9 @@ const app = express();
 // Add a health check
 require('kube-probe')(app);
 
-app.use(express.static(path.join(__dirname, '/app')));
+// Add static resources
+require('./app/resources/static')(app, __dirname);
+
 app.use(bodyParser.json());
 
 const Contact = require('./app/model/Contact.model');
