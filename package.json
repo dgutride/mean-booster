@@ -12,6 +12,8 @@
     "test:integration": "npm run test:preIntegration && echo 'test-integration'",
     "lint": "eslint server.js app test",
     "openshift": "nodeshift --osc.strictSSL=false",
+    "mongodb": "docker rm mongodb && docker run -p 127.0.0.1:27017:27017 --name mongodb -e MONGODB_USERNAME=default -e MONGODB_PASSWORD=default -e MONGODB_DATABASE=contacts bitnami/mongodb:latest",
+    "localhost": "MONGO_URL='mongodb://default:default@localhost:27017/contacts' npm start",
     "start": "PORT=8080 node server.js"
   },
   "files": [
